@@ -5,14 +5,18 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-     private lateinit var activityViewModel: MainActivityViewModel
+    @Inject
+     lateinit var activityViewModel: MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        (application as MyApplication).applicationComponent.inject(this)
 
 
 ////        //First way - Deprecated
@@ -21,10 +25,14 @@ class MainActivity : AppCompatActivity() {
 //
 //        Log.d("abc", activityViewModel.toString())
 
-        //Second way of creating ViewModel
-        val activityViewModel:MainActivityViewModel by viewModels()
+//        //Second way of creating ViewModel
+//        val activityViewModel:MainActivityViewModel by viewModels()
 
 
+        // inject ViewModel into Main Activity
+        // dependency
+        //@Inject for ViewModel
+        //
 
 
 

@@ -5,5 +5,9 @@ import javax.inject.Inject
 
 class MainActivityViewModel @Inject constructor() :ViewModel(){
 
+    //live data
+
+    //some methods
+
 
 }

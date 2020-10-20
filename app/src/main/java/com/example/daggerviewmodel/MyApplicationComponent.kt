@@ -1,6 +1,12 @@
 package com.example.daggerviewmodel
 
-interface MyApplicationComponent {
+import dagger.Component
 
+
+@Component
+interface ApplicationComponent {
+
+    // where you want to inject
+    fun inject(activity: MainActivity)
 
 }
